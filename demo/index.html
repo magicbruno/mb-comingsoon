@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Demo mbComingsoon</title>
+    <link href="css/style.min.css" rel="stylesheet" />
+    <link href="css/mb-comingsoon.min.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="dark-blue color-2 ">
+        <div class="inner-page">
+            <div class="row">
+                <div class="col-xs-4 col-xs-offset-4">
+                    <img class="img-responsive centered" src="img/ConteScontornato-red.png" /></div>
+            </div>
+            <div class="text-center hgroup">
+                <h1 class="page-headline large">MB Comingsoon</h1>
+                <h3>Animated and responsive counter for jQuery.</h3>
+                <h4>Full compatible with Bootstrap 3</h4>
+            </div>
+        </div>
+        <div class="row centered text-center" id="myCounter"></div>
+        <div class="text-center">
+            <p><a class="btn btn-primary btn-lg" href="https://github.com/magicbruno/mb-comingsoon">Docs and downloads</a></p>
+            <p><a href="mailto:info@magicbusmultimedia.it" title="Write us">info@magicbusmultimedia.it</a>
+            </p>
+        </div>
+
+    </section>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        if (typeof jQuery == 'undefined') {
+            document.write(unescape("%3Cscript src='js/Lib/jquery-1.11.0.min.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+    </script>
+    <script src="js/jquery.mb-comingsoon.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var $section = $('section');
+            $(window).on("resize", function () {
+                var dif = Math.max($(window).height() - $section.height(), 0);
+                var padding = Math.floor(dif / 2) + 'px';
+                $section.css({ 'padding-top': padding, 'padding-bottom': padding });
+            }).trigger("resize");
+            $('#myCounter').mbComingsoon(new Date(2015, 0, 1, 9, 30));
+            setTimeout(function () {
+                $(window).resize();
+            }, 200);
+        });
+
+    </script>
+
+</body>
+</html>

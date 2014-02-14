@@ -1,4 +1,4 @@
 mb-comingsoon
 =============
 
-Animated responsive countdows jQuery plugin
+Animated responsive countdow jQuery plugin

@@ -3,7 +3,7 @@ mbCoimingsoon
 
 Animated responsive countdonw for jQuery.
 
-Usage 
+Getting started 
 -----
 	<!-- Create a div container -->
 	<div id="myCounter"></div>
@@ -18,10 +18,10 @@ Usage
 	</script>
 	
 	<script>
-		// You have few way to apply the plugin
+		// You have few way to initialize the plugin
 		// Passing a Date
 		$('#myCounter').mbComingsoon(new Date(2014, 5, 3, 9)) //Expires June 5th 2014 9 o'clock
-		//or
+		//or...
 		// Paasing a string (At your own risk!)
 		$('#myCounter').mbComingsoon("June 5th 2014") 
 		//or
@@ -45,7 +45,7 @@ Usage
 
 Notes
 -----
-MbComingsoon is resposive, is compatible with (<b>but not dipendent by</b>) Bootstrap.
-MbCaomingsoon dinamically load a subset (only digits) of "Open Sans Condensed" Google Font (bold style). If your site already use this font you may comment realated line in mb-comingsoon.less (and recompile) or in css file.
+MbComingsoon is resposive and it is compatible with (<b>but not dependent by</b>) Bootstrap.
+MbCaomingsoon dinamically load a subset (only 0-9 characters) of "Open Sans Condensed" Google Font (bold style). If your site already use this font you may comment realated line in mb-comingsoon.less (and recompile) or in css file.
 
 Try a demo <a href="http://jquery.magicbusmultimedia.net">here</a>.

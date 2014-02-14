@@ -48,4 +48,4 @@ Notes
 MbComingsoon is resposive, is compatible with (<b>but not dipendent by</b>) Bootstrap.
 MbCaomingsoon dinamically load a subset (only digits) of "Open Sans Condensed" Google Font (bold style). If your site already use this font you may comment realated line in mb-comingsoon.less (and recompile) or in css file.
 
-Try a demo <a href="jquery.magicbusmultimedia.net">here</a>.
+Try a demo <a href="http://jquery.magicbusmultimedia.net">here</a>.

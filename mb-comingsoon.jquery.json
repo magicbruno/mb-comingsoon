@@ -1,25 +1,25 @@
-  { 
-    "name": "mb-comingsoon",
-    "title": "Mb Comingsoon Time Counter",
-    "description": "This is an animated resposive Coming Soon time counter. ",
-  "keywords": ["ui", "countdown", "responsive"],
-  "version": "1.0.0",
-  "author": {
-    "name": "Bruno Migliaretti",
-    "email" : "bruno@magicbusmultimedia.it",
+ { 
+    	"name": "mb-comingsoon",
+    	"title": "Mb Comingsoon Time Counter",
+    	"description": "This is an animated resposive Coming Soon time counter. ",
+ 	"keywords": ["ui", "countdown", "responsive"],
+  	"version": "1.0.0",
+  	"author": {
+    		"name": "Bruno Migliaretti",
+    		"email" : "bruno@magicbusmultimedia.it",
 		"url": "http://www.sisteminterattivi.org"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://opensource.org/licenses/MIT"
-    }
-  ],
-  "dependencies": {
-    "jquery": ">=1.9"
-  },
-  "homepage": "https://github.com/magicbruno/mb-comingsoon",
-  "docs": "https://github.com/magicbruno/mb-comingsoon",
-  "demo": "http://jquery.magicbusmultimedia.net/,
-  "download": "https://github.com/magicbruno/mb-comingsoon"
+  	},
+  	"licenses": [
+	    	{
+	      		"type": "MIT",
+	      		"url": "http://opensource.org/licenses/MIT"
+	    	}
+  	],
+  	"dependencies": {
+    		"jquery": ">=1.9"
+  	},
+  	"homepage": "https://github.com/magicbruno/mb-comingsoon",
+  	"docs": "https://github.com/magicbruno/mb-comingsoon",
+  	"demo": "http://jquery.magicbusmultimedia.net/,
+  	"download": "https://github.com/magicbruno/mb-comingsoon"
 }

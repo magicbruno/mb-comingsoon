@@ -1,5 +1,5 @@
-mbCoimingsoon
-=============
+MB Coming Soon Timer
+====================
 
 Animated responsive countdonw for jQuery.
 

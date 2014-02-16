@@ -16,7 +16,8 @@ Getting started
 	            document.write(unescape("%3Cscript src='js/Lib/jquery-1.11.0.min.js' type='text/javascript'%3E%3C/script%3E"));
 	        }
 	</script>
-	
+	<!-- Load Mb Coming Soon Timer -->
+	<script src="js/jquery.mb-comingsoon.min.js"></script>
 	<script>
 		// You have few way to initialize the plugin
 		// Passing a Date

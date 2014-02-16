@@ -22,7 +22,7 @@ Getting started
 		// Passing a Date
 		$('#myCounter').mbComingsoon(new Date(2014, 5, 3, 9)) //Expires June 5th 2014 9 o'clock
 		//or...
-		// Paasing a string (At your own risk!)
+		// Passing a string (At your own risk, it's culture dependent!)
 		$('#myCounter').mbComingsoon("June 5th 2014") 
 		//or
 		//Passing an object containing full options

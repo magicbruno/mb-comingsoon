@@ -1,7 +1,7 @@
  { 
     	"name": "mb-comingsoon",
-    	"title": "Mb Comingsoon Time Counter",
-    	"description": "This is an animated resposive Coming Soon time counter. ",
+    	"title": "Mb Comingsoon Time Countdown",
+    	"description": "This is an animated resposive Coming Soon time countdown. ",
  	"keywords": ["ui", "countdown", "responsive"],
   	"version": "1.0.0",
   	"author": {

@@ -37,6 +37,13 @@ Getting started
                                         seconds: "seconds"
 				},
 				callBack: Function  		//Function executed on expiry or if espired
+								//Callback function pass e reference to the 
+								//mbComingSoon object self as parameter 
+								// Example:
+								// function(t) {
+								//	$(t).mbComingSoon({expiryDate:  a New Date})
+								//      $(t).mbComingSoon('start');
+								// }
 			}); 
 		// Finally you have some additional Methds to control the plugin
 		$('#myCounter').mbComingSoon('start') 		// start counter

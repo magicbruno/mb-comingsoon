@@ -38,7 +38,7 @@ Getting started
 				},
 				callBack: Function  		//Function executed on expiry or if espired
 								//Callback function pass e reference to the 
-								//mbComingSoon object self as parameter 
+								//mbComingSoon object itself as parameter 
 								// Example:
 								// function(t) {
 								//	$(t).mbComingSoon({expiryDate:  a New Date})

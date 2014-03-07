@@ -42,7 +42,7 @@ Getting started
 								// Example:
 								// function(t) {
 								//	$(t).mbComingSoon({expiryDate:  a New Date})
-								//      $(t).mbComingSoon('start');
+								// 	$(t).mbComingSoon('start');
 								// }
 			}); 
 		// Finally you have some additional Methds to control the plugin

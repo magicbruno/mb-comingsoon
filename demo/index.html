@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Demo mbComingsoon</title>
     <link href="css/style.min.css" rel="stylesheet" />
-    <link href="css/mb-comingsoon.min.css" rel="stylesheet" />
+    <link href="css/mb-comingsoon-iceberg.css" rel="stylesheet" />
 </head>
 <body>
     <section class="dark-blue color-2 ">
@@ -43,7 +43,7 @@
                 var padding = Math.floor(dif / 2) + 'px';
                 $section.css({ 'padding-top': padding, 'padding-bottom': padding });
             }).trigger("resize");
-            $('#myCounter').mbComingsoon(new Date(2015, 0, 1, 9, 30));
+            $('#myCounter').mbComingsoon({ expiryDate: new Date(2015, 0, 1, 9, 30), speed:100 });
             setTimeout(function () {
                 $(window).resize();
             }, 200);

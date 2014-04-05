@@ -3,6 +3,11 @@ MB Coming Soon Timer
 
 Animated responsive countdonw for jQuery.
 
+New in version 1.1.0
+------
+Added speed options property. Now you may customize animation speed. Range is from 0 to "interval". Consider to use 20-50 milliseconds less then interval to avoid animation breaks.
+Added sample custom stylesheet mb-comingsoon-iceberg.css (and corrisponding less file). Simply use this file instead of the default one or create your own.
+
 Getting started 
 -----
 	<!-- Create a div container -->
@@ -36,6 +41,7 @@ Getting started
                                         minutes: "minutes",
                                         seconds: "seconds"
 				},
+				speed: Number,			//Animation duration in milliseconds from o tu interval
 				callBack: Function  		//Function executed on expiry or if espired
 								//Callback function pass e reference to the 
 								//mbComingSoon object itself as parameter 

@@ -1,7 +1,7 @@
 ﻿/// <reference path="../../Scripts/jquery-1.10.2-vsdoc.js" />
 
 /**************************************************************************
- *------------------------ COMINGSOON COUNTER 1.0 ------------------------
+ *------------------------ COMINGSOON COUNTER 1.1 ------------------------
  * ========================================================================
  * Copyright 2014 Bruno Milgiaretti http://www.sisteminterattivi.org
  * Licensed under MIT http://opensource.org/licenses/MIT
@@ -32,11 +32,12 @@
 (function ($) {
 	// Class Definition
 	var MbComingsoon;
-	MbComingsoon = function (date, element, localization, callBack) {
+	MbComingsoon = function (date, element, localization, speed, callBack) {
 		this.$el = $(element);
 		this.end = date;
 		this.active = false;
 		this.interval = 1000;
+		this.speed = speed;
 		if (jQuery.isFunction(callBack))
 			this.callBack = callBack;
 		else
@@ -185,10 +186,10 @@
 					.css('top', '-100%')
 					.text(value)
 					.stop()
-					.animate({ top: 0 }, 500, function () {
+					.animate({ top: 0 }, this.speed, function () {
 						$n2.addClass('show');
 					});
-				$n1.stop().animate({ top: "100%" }, 500, function () {
+				$n1.stop().animate({ top: "100%" }, this.speed, function () {
 					$n1.removeClass('show')
 						.addClass('hidden-down');
 				});
@@ -197,10 +198,10 @@
 					.css('top', '-100%')
 					.text(value)
 					.stop()
-					.animate({ top: 0 }, 500, function () {
+					.animate({ top: 0 }, this.speed, function () {
 						$n1.addClass('show');
 					});
-				$n2.stop().animate({ top: "100%" }, 500, function () {
+				$n2.stop().animate({ top: "100%" }, this.speed, function () {
 					$n2.removeClass('show')
 						.addClass('hidden-down');
 				});
@@ -213,7 +214,8 @@
 		var defaults = {
 			interval: 1000,
 			callBack: null,
-			localization: { days: "days", hours: "hours", minutes: "minutes", seconds: "seconds" }
+			localization: { days: "days", hours: "hours", minutes: "minutes", seconds: "seconds" },
+            speed:500
 		}
 		var options = {};
 		var content = '   <div class="counter-group" id="myCounter">' +
@@ -268,7 +270,7 @@
 					options.expiryDate = new Date(opt);
 				if (!options.expiryDate)
 					throw new Error('Expiry date is required!');
-				data = new MbComingsoon(options.expiryDate, $this, options.localization, options.callBack);
+				data = new MbComingsoon(options.expiryDate, $this, options.localization, options.speed, options.callBack);
 				$this.html(content);
 				data.localize();
 				data.start();

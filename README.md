@@ -41,7 +41,7 @@ Getting started
                                         minutes: "minutes",
                                         seconds: "seconds"
 				},
-				speed: Number,			//Animation duration in milliseconds from o tu interval
+				speed: Number,			//Animation duration in milliseconds from 0 to interval
 				callBack: Function  		//Function executed on expiry or if espired
 								//Callback function pass e reference to the 
 								//mbComingSoon object itself as parameter 

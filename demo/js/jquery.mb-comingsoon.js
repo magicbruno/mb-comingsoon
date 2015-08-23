@@ -1,7 +1,7 @@
 ﻿/// <reference path="../../Scripts/jquery-1.10.2-vsdoc.js" />
 
 /**************************************************************************
- *------------------------ COMINGSOON COUNTER 1.1 ------------------------
+ *------------------------ COMINGSOON COUNTER 1.2 ------------------------
  * ========================================================================
  * Copyright 2014 Bruno Milgiaretti http://www.sisteminterattivi.org
  * Licensed under MIT http://opensource.org/licenses/MIT
@@ -32,18 +32,18 @@
 (function ($) {
 	// Class Definition
 	var MbComingsoon;
-	MbComingsoon = function (date, element, localization, speed, callBack) {
+	MbComingsoon = function (element, opt) {
 		this.$el = $(element);
-		this.end = date;
-		this.active = false;
-		this.interval = 1000;
-		this.speed = speed;
-		if (jQuery.isFunction(callBack))
-			this.callBack = callBack;
+		this.end = opt.expiryDate;
+		this.interval = opt.interval;
+		this.speed = opt.speed;
+		this.timer = 0;
+		if (jQuery.isFunction(opt.callBack))
+			this.callBack = opt.callBack;
 		else
 		    this.callBack = null;
 		this.localization = {days:"days", hours: "hours", minutes: "minutes", seconds: "seconds"};
-		$.extend(this.localization, this.localization, localization);
+		$.extend(this.localization, this.localization, opt.localization);
 	}
 
 	MbComingsoon.prototype = {
@@ -149,7 +149,7 @@
 			this.updatePart('minutes');
 			this.updatePart('seconds');
 			if (this.timeOut()) {
-				this.active = false;
+				this.stop();
 				if (this.callBack)
 					this.callBack(this);
 			}
@@ -164,20 +164,19 @@
 		},
 		// Start automatic update (interval in milliseconds)
 		start: function (interval) {
-			if (interval)
-				this.interval = interval;
-			var i = this.interval;
-			this.active = true;
-			var me = this;
-			setTimeout(function () {
-				me.updateCounter();
-				if (me.active)
-					me.start();
-			}, i);
+		    var me = this;
+		    me.stop();
+		    if (me.timer == 0)
+		        me.timer = setInterval(function () { me.updateCounter() }, me.interval);
+		    me.updateCounter();
 		},
 		// Stop automatic update 
 		stop: function () {
-			this.active = false;
+		    //this.active = false;
+		    if (this.timer > 0) {
+		        clearInterval(this.timer);
+		        this.timer = 0;
+		    }
 		},
 		// Animation of a single 
 		scrollNumber: function ($n1, $n2, value) {
@@ -261,7 +260,7 @@
 		return this.each(function () {
 			var $this = $(this);
 			var data = $this.data('mbComingsoon');
-			if (!data) {
+			if (typeof data === "undefined") {
 				if (opt instanceof Date)
 					options.expiryDate = opt;
 				else if ($.isPlainObject(opt))
@@ -270,7 +269,8 @@
 					options.expiryDate = new Date(opt);
 				if (!options.expiryDate)
 					throw new Error('Expiry date is required!');
-				data = new MbComingsoon(options.expiryDate, $this, options.localization, options.speed, options.callBack);
+				data = new MbComingsoon($this, options);
+				$this.data('mbComingsoon', data);
 				$this.html(content);
 				data.localize();
 				data.start();
@@ -287,6 +287,7 @@
 				    data.callBack = opt.callBack;
 				if ($.isPlainObject(opt.localization))
 				    this.localize(opt.localization);
+				data.start();
 			}
 		})
 	}

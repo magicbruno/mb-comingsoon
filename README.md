@@ -3,6 +3,10 @@ MB Coming Soon Timer
 
 Animated responsive countdonw for jQuery.
 
+New in version 1.2.0
+------
+Some bug was corrected. Now interval parameter amd stop method work like expected.
+
 New in version 1.1.0
 ------
 Added speed options property. Now you may customize animation speed. Range is from 0 to "interval". Consider to use 20-50 milliseconds less then interval to avoid animation breaks.

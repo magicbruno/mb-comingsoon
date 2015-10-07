@@ -10,7 +10,7 @@ Some bug was corrected. Now interval parameter amd stop method work like expecte
 New in version 1.1.0
 ------
 Added speed options property. Now you may customize animation speed. Range is from 0 to "interval". Consider to use 20-50 milliseconds less then interval to avoid animation breaks.
-Added sample custom stylesheet mb-comingsoon-iceberg.css (and corrisponding less file). Simply use this file instead of the default one or create your own.
+Added sample custom stylesheet mb-comingsoon-iceberg.css (and corresponding less file). Simply use this file instead of the default one or create your own.
 
 Getting started 
 -----

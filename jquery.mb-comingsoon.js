@@ -286,7 +286,7 @@
 				if ($.isFunction(opt.callBack))
 				    data.callBack = opt.callBack;
 				if ($.isPlainObject(opt.localization))
-				    this.localize(opt.localization);
+				    data.localize(opt.localization);
 				data.start();
 			}
 		})
